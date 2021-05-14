@@ -1,7 +1,7 @@
 #!/bin/bash
 TYPE="retro-terminal"
-THEME="green.css"
-DOMAIN="theme-park.dev" #if you update the domain after the script has been run, You must disable and re enable JS or the whole theme.  
+THEME="white.css"
+DOMAIN="corwell7.github.io" #if you update the domain after the script has been run, You must disable and re enable JS or the whole theme.  
 ADD_JS="true"
 JS="custom_text_header.js"
 DISABLE_THEME="false"
@@ -25,14 +25,6 @@ if [ ! -f /usr/local/emhttp/login.php.backup ]; then
   echo "Creating backup of login.php" 
   cp -p /usr/local/emhttp/login.php /usr/local/emhttp/login.php.backup
 fi
-
-# Use correct domain style
-case ${DOMAIN} in
-  *"github.io"*)
-  echo "Switching to github.io URL style"
-    DOMAIN="${DOMAIN}\/theme.park"
-    ;;
-esac
 
 # Adding stylesheets
 if ! grep -q ${DOMAIN} /usr/local/emhttp/login.php; then
