@@ -9,7 +9,7 @@
 --main-bg-color:black;
 --body-before:#70d7f61a;
 --body-after: #70d7f633;
---body-animation: flicker;
+--body-animation: none;
 --logo: url(https://corwell7.github.io/CSS/addons/unraid/login-page/blackmesa/301621.png) center no-repeat;
 --text-color: #ffffff;
 --input-color: #ffffff;
