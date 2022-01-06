@@ -4,17 +4,17 @@
 /* --body-animation: flicker; This is the background that flickers. SET TO NONE TO REMOVE THE FLICKER ANIMATION! */
 /* --custom-text-header-animation: textflicker; /* SET TO NONE TO REMOVE THE FLICKER ANIMATION! */
 
-@import url(https://theme-park.dev/css/addons/unraid/login-page/retro-terminal/retro-terminal-base.css);
+@import url(https://corwell7.github.io/css/addons/unraid/login-page/retro-terminal/retro-terminal-base.css);
 :root {
 --main-bg-color:black;
 --body-before:#70d7f61a;
 --body-after: #70d7f633;
---body-animation: flicker;
---logo: url(https://theme-park.dev/css/addons/unraid/login-page/alien/logo/wings_shadow.png) center no-repeat;
+--body-animation: none;
+--logo: url(https://corwell7.github.io/css/addons/unraid/login-page/blackmesa/301621.png) center no-repeat;
 --text-color: #ffffff;
 --input-color: #ffffff;
 --link-color: #ffffff;
---link-color-hover: #8f2809;
+--link-color-hover: #af0606;
 --case-color: #ffffff;
 --button-text-color: #ffffff;
 --button-text-color-hover: #000;
@@ -28,6 +28,6 @@
 --text-font: 'Share Tech Mono', monospace;
 --loginbox-background-color: transparent;
 --text-shadow: 0 0 8px;
---text-shadow-color: #ffffff;
+--text-shadow-color: #000000;
 --box-shadow: 0 0 15px;
 }
