@@ -26,14 +26,6 @@ if [ ! -f /usr/local/emhttp/login.php.backup ]; then
   cp -p /usr/local/emhttp/login.php /usr/local/emhttp/login.php.backup
 fi
 
-# Use correct domain style
-case ${DOMAIN} in
-  *"github.io"*)
-  echo "Switching to github.io URL style"
-    DOMAIN="${DOMAIN}\/theme.park"
-    ;;
-esac
-
 # Adding stylesheets
 if ! grep -q ${DOMAIN} /usr/local/emhttp/login.php; then
   echo "Adding stylesheet"
