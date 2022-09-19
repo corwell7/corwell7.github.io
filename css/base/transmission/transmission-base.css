@@ -10,6 +10,9 @@
 /*		   		        Made by @gilbN					 */
 /*			      https://github.com/gilbN/theme.park			 */
 @import url(https://use.fontawesome.com/releases/v5.0.7/css/all.css);
+@import url("/css/defaults/placeholders.css");
+@import url("/css/defaults/transparent.css");
+
 
 * {
     outline: none !important;
@@ -65,7 +68,7 @@ body {
     min-height: 50px;
     border: 3px solid transparent;
     border-radius: 8px;
-    background-color: hsla(0, 0%, 100%, .2);
+    background: var(--transparency-dark-20);
     background-clip: padding-box;
 }
 
@@ -77,7 +80,7 @@ body {
     min-height: 50px;
     border: 3px solid transparent;
     border-radius: 8px;
-    background-color: hsla(0, 0%, 100%, .5);
+    background: var(--transparency-light-50);
     background-clip: padding-box;
 }
 
@@ -99,7 +102,7 @@ div#torrent_inspector #inspector_header #torrent_inspector_name,
 
 /* Toolbar */
 div#toolbar {
-    background: rgba(0, 0, 0, .25);
+    background: var(--transparency-dark-25);
     background-image: none;
     border-bottom: 1px solid transparent;
 }
@@ -243,7 +246,7 @@ div#toolbar>div#toolbar-inspector:before {
 #statusbar {
     border-bottom: 1px solid transparent;
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25)
+    background: var(--transparency-dark-25)
 }
 
 #statusbar #filter input#torrent_search {
@@ -283,7 +286,7 @@ div#toolbar>div#toolbar-inspector:before {
 
 ul.torrent_list,
 ul.torrent_list li.torrent.even {
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25)
 }
 
 ul.torrent_list li.torrent div.torrent_name {
@@ -291,14 +294,14 @@ ul.torrent_list li.torrent div.torrent_name {
 }
 
 ul.torrent_list li.torrent.selected {
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 ul.torrent_list li.torrent {
     border-bottom: 1px solid rgba(204, 204, 204, 0.1);
     padding: 4px 30px 5px 14px;
     color: var(--text);
-    background-color: rgba(255, 255, 255, 0.08);
+    background: var(--transparency-light-10);
 }
 
 /* Modal */
@@ -317,12 +320,12 @@ div.dialog_container div.dialog_window {
 
 div.dialog_container div.dialog_window h2.dialog_heading,
 div#upload_container div.dialog_window div.dialog_message label {
-    color: #dedede
+    color: var(--text)  
 }
 
 input {
     color: var(--text-hover);
-    background: rgba(0, 0, 0, .25)
+    background: var(--transparency-dark-25)
 }
 
 #add-dialog-folder-input,
@@ -332,7 +335,7 @@ input {
 }
 
 div.dialog_container div.dialog_window div.dialog_message {
-    color: #dedede;
+    color: var(--text);
 }
 
 /* Button*/
@@ -419,22 +422,22 @@ div.dialog_container div.dialog_window a:active {
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
     border: 1px solid transparent;
-    background: rgba(255, 255, 255, .1) !important;
+    background: var(--transparency-light-10) !important;
     font-weight: normal;
-    color: #dedede;
+    color: var(--text);
 }
 
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-    color: #dedede;
+    color: var(--text);
     text-decoration: none;
 }
 
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-    color: #dedede;
+    color: var(--text);
     text-decoration: none;
 }
 
@@ -442,9 +445,9 @@ div.dialog_container div.dialog_window a:active {
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
     border: 1px solid transparent;
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
     font-weight: normal;
-    color: #dedede;
+    color: var(--text);
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
@@ -480,20 +483,20 @@ div#torrent_inspector {
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>* {
     border-color: transparent;
     height: auto;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector div.inspector_torrent_file_list_entry_name,
 div#torrent_inspector ul.tier_list .tracker_activity,
 div#torrent_inspector ul.tier_list table,
 div#torrent_inspector div.tracker_host {
-    color: #dedede;
+    color: var(--text);
 }
 
 /*Info button*/
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-info {
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-info:hover:before {
@@ -512,7 +515,7 @@ div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-inf
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-info:active,
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-info.selected {
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-info:active,
@@ -533,7 +536,7 @@ div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-inf
 /*Peers Button*/
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-peers {
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-peers:hover:before {
@@ -552,7 +555,7 @@ div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-pee
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-peers:active,
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-peers.selected {
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-peers:active,
@@ -573,7 +576,7 @@ div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-pee
 /*Tracker Button*/
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-trackers {
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-trackers:hover:before {
@@ -592,7 +595,7 @@ div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-tra
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-trackers:active,
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-trackers.selected {
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-trackers:active,
@@ -613,7 +616,7 @@ div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-tra
 /*Files Button*/
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-files {
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-files:hover:before {
@@ -632,7 +635,7 @@ div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-fil
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-files:active,
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-files.selected {
     background-image: none;
-    background-color: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
 }
 
 div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-files:active,
@@ -651,7 +654,7 @@ div#torrent_inspector #inspector-tabs-wrapper #inspector-tabs>#inspector-tab-fil
 }
 
 tr.inspector_peer_entry.odd {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: var(--transparency-light-10);
 }
 
 /* Priority buttons */
@@ -781,13 +784,13 @@ div.file-priority-radiobox>div.high.selectedbefore {
 }
 
 div#torrent_inspector li.inspector_tracker_entry.odd {
-    background-color: rgba(255, 255, 255, 0.1);
+    background: var(--transparency-light-10);
 }
 
 /*Bottom Toolbar*/
 div.torrent_footer {
     border-top: 1px solid transparent;
-    background-color: rgba(0, 0, 0, .25);
+    background: var(--transparency-dark-25);
     background-image: none;
     height: 30px;
 }
@@ -913,7 +916,7 @@ div.torrent_footer #turtle-button.selected:before {
     content: "\f3fd";
     font-weight: 900;
     display: inline-block;
-    color: white;
+    color: var(--text-hover);
 }
 
 /* Compact Icon */
@@ -959,7 +962,7 @@ div.torrent_footer #compact-button.selected:before {
 /*Compact mode*/
 ul.torrent_list li.torrent div.torrent_name.paused,
 ul.torrent_list li.torrent.compact div.torrent_name {
-    color: #dedede;
+    color: var(--text);
 }
 
 /* Settings menu */
@@ -971,12 +974,12 @@ ul.torrent_list li.torrent.compact div.torrent_name {
 .ui-widget-header .ui-state-focus {
     border: 1px solid transparent;
     background: none;
-    background-color: rgba(255, 255, 255, 0.1);
+    background: var(--transparency-light-10);
     color: var(--text-hover);
     outline: none;
 }
 
 .ui-icon,
 .ui-widget-content .ui-icon {
-    background-image: url(https://raw.githubusercontent.com/gilbN/theme.park/master/resources/transmission/icons.png);
+    background-image: url(/resources/transmission/icons.png);
 }

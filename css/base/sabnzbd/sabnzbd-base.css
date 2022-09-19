@@ -9,7 +9,8 @@
 /*		   		        Made by @gilbN					 */
 /*			      https://github.com/gilbN/theme.park			 */
 
-@import url(https://theme-park.dev/css/defaults/placeholders.css);
+@import url("/css/defaults/placeholders.css");
+@import url("/css/defaults/transparent.css");
 
 body {
   background: var(--main-bg-color) !important;
@@ -47,6 +48,10 @@ p {
 
 a {
   color: var(--link-color);
+}
+
+[href="#modal-add-nzb"] {
+  opacity: 1;
 }
 
 .speedlimit-dropdown.dropdown>div>div>a {
@@ -102,7 +107,7 @@ a:focus {
   min-height: 50px;
   border: 3px solid transparent;
   border-radius: 8px;
-  background-color: hsla(0, 0%, 100%, .2);
+  background: var(--transparency-dark-20);
   background-clip: padding-box;
 }
 
@@ -114,7 +119,7 @@ a:focus {
   min-height: 50px;
   border: 3px solid transparent;
   border-radius: 8px;
-  background-color: hsla(0, 0%, 100%, .5);
+  background: var(--transparency-light-50);
   background-clip: padding-box;
 }
 
@@ -129,7 +134,7 @@ hr {
 }
 
 .navbar-inverse {
-  background-color: rgba(0, 0, 0, .25);
+  background: var(--transparency-dark-25);
   border-color: transparent !important;
 }
 
@@ -165,7 +170,7 @@ hr {
 .navbar-inverse .navbar-nav>.open>a,
 .navbar-inverse .navbar-nav>.open>a:hover,
 .navbar-inverse .navbar-nav>.open>a:focus {
-  background-color: hsla(0, 0%, 100%, .08);
+  background: var(--transparency-dark-10);
 }
 
 .ui-slider-horizontal,
@@ -179,12 +184,13 @@ hr {
 }
 
 .main-content {
-  background-color: rgba(0, 0, 0, 0.15);
+  background: var(--transparency-dark-15);
   border: none;
 }
 
 .dropdown-menu,
-#feedback-slider {
+#feedback-slider,
+.navbar-collapse.in .dropdown-menu {
   background: var(--drop-down-menu-bg);
   background-repeat: repeat, no-repeat;
   background-attachment: fixed, fixed;
@@ -193,16 +199,33 @@ hr {
   -webkit-background-size: auto, cover;
   -moz-background-size: auto, cover;
   -o-background-size: auto, cover;
+  border: none;
 }
 
-.dropdown-menu>li>a {
+.dropdown-menu>li>a{
   color: var(--text-hover);
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-collapse.in .dropdown-menu a, .navbar-collapse.in .dropdown-menu a:hover {
+  color: var(--text-hover) !important;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+  background: var(--transparency-light-25);
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
   color: var(--text-hover);
-  background-color: rgba(255, 255, 255, 0.08);
+  background: var(--transparency-light-10);
 }
 
 .dropdown-header {
@@ -236,11 +259,6 @@ hr {
   color: var(--text-hover);
 }
 
-
-.caret {
-  border-top-color: white !important;
-}
-
 svg.peity polygon {
   fill: var(--button-color) !important;
 }
@@ -271,7 +289,7 @@ svg.peity polyline {
 }
 
 .btn-default {
-  color: var(--button-text);
+  color: var(--button-text) !important;
   background: var(--button-color);
   border-color: var(--button-color);
   outline: none !important;
@@ -279,13 +297,13 @@ svg.peity polyline {
 
 .btn-default:focus,
 .btn-default.focus {
-  color: var(--button-text-hover);
+  color: var(--button-text-hover) !important;
   background: var(--button-color-hover);
   border-color: var(--button-color-hover);
 }
 
 .btn-default:hover {
-  color: var(--button-text-hover);
+  color: var(--button-text-hover) !important;
   background: var(--button-color-hover);
   border-color: var(--button-color-hover);
 }
@@ -394,7 +412,7 @@ svg.peity polyline {
 .btn-default.fileBrowser:hover,
 .btn-default.fileBrowser:focus,
 .btn-default.fileBrowser:active {
-  color: #fff !important;
+  color: var(--button-text-hover) !important;
   background-color: var(--button-color-hover) !important;
   border-color: transparent !important;
 }
@@ -433,7 +451,7 @@ svg.peity polyline {
 }
 
 .btn-default.patternKey:hover {
-  color: #fff !important;
+  color: var(--button-text-hover) !important;
   background-color: var(--button-color-hover);
   border-color: transparent;
 }
@@ -473,7 +491,8 @@ input[type="submit"]:focus {
 
 /* History */
 
-.queue-table .row-extra-text, .history-table .row-extra-text {
+.queue-table .row-extra-text,
+.history-table .row-extra-text {
   color: var(--text-muted);
 }
 
@@ -481,12 +500,16 @@ input[type="submit"]:focus {
   border-top-color: var(--button-text) !important;
 }
 
+td.delete .dropdown>a .caret {
+  border-top-color: var(--button-color) !important;
+}
+
 .table-striped>tbody>tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.25);
+  background: var(--transparency-dark-25);
 }
 
 tbody.no-downloads tr td {
-  border-bottom: 1px solid #1f1f1f !important;
+  border-bottom: 1px solid var(--drop-down-menu-bg) !important;
 }
 
 tbody>tr>td:last-child {
@@ -502,15 +525,15 @@ tbody>tr>td:first-child {
 }
 
 table {
-  background-color: rgba(0, 0, 0, 0.25) !important
+  background: var(--transparency-dark-25) !important
 }
 
 table:hover {
-  background-color: rgba(0, 0, 0, 0.25) !important;
+  background: var(--transparency-dark-25) !important;
 }
 
 .table-hover>tbody>tr:hover {
-  background-color: rgba(255, 255, 255, 0.07) !important;
+  background-color: var(--transparency-dark-10) !important;
   color: var(--text-hover);
 }
 
@@ -533,34 +556,35 @@ tr td.row-extra-text,
 
 .table-messages .table-messages-remove {
   border-bottom: 1px solid transparent !important;
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--transparency-light-25);
 }
 
 .progress .progress-bar .fileDetails {
   color: var(--button-text);
 }
 
-.progress strong, .progress i {
-  color: #fff;
+.progress strong,
+.progress i {
+  color: var(--text-hover);
 }
 
 .progress {
-  background-color: transparent !important;
+  background-color: rgb(var(--accent-color), .7) !important;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
 }
 
 .progress-bar strong {
-  color: hsla(0, 0%, 100%, .7) !important;
+  color: var(--label-text-color) !important;
 }
 
 .progress-bar+span {
-  color: hsla(0, 0%, 100%, .7) !important;
+  color: var(--label-text-color) !important;
 }
 
 .progress-bar-info,
 .progress-bar {
-  background-color: var(--button-color) !important;
+  background-color: rgb(var(--accent-color)) !important;
 }
 
 .glyphicon-compressed:before {
@@ -578,7 +602,7 @@ tr td.row-extra-text,
 
 .multioperations-selector {
   border: 1px solid transparent !important;
-  background-color: rgba(0, 0, 0, 0.25) !important;
+  background: var(--transparency-dark-25) !important;
 }
 
 #history-options .hover-button {
@@ -587,7 +611,7 @@ tr td.row-extra-text,
 
 #history-tab .table>tbody>tr:nth-of-type(2n+1),
 .table-striped>tbody>tr:nth-of-type(2n+1) {
-  background-color: rgba(255, 255, 255, 0.05);
+  background: var(--transparency-light-05);
 }
 
 .pagination>li>a,
@@ -630,7 +654,7 @@ tr td.row-extra-text,
 .pagination>.disabled>a:hover,
 .pagination>.disabled>a:focus {
   color: var(--text-muted);
-  background-color: rgba(0, 0, 0, .25);
+  background: var(--transparency-dark-25);
   border: 1px solid transparent;
 }
 
@@ -640,8 +664,8 @@ tr td.row-extra-text,
 }
 
 .form-control {
-  color: white;
-  background-color: rgb(0 0 0 / 25%);
+  color: var(--text-hover);
+  background: var(--transparency-dark-25);
 }
 
 .form-control:focus {
@@ -657,7 +681,7 @@ tr td.row-extra-text,
 .history-queue-swicher .nav-tabs>li.active>a {
   border-bottom: 1px solid transparent;
   border: 1px solid transparent;
-  color: #fff !important;
+  color: var(--text-hover) !important;
 }
 
 .history-queue-swicher .nav {
@@ -668,13 +692,13 @@ tr td.row-extra-text,
 .nav-tabs>li.active>a:hover,
 .nav-tabs>li.active>a:focus {
   color: #555;
-  background-color: rgba(255, 255, 255, 0.15);
+  background: var(--transparency-light-15);
 }
 
 .nav>li>a:hover,
 .nav>li>a:focus {
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.08);
+  background: var(--transparency-light-10);
 }
 
 .badge {
@@ -700,7 +724,7 @@ tr td.row-extra-text,
 }
 
 .navbar-default .navbar-nav>.open>a {
-  background-color: hsla(0, 0%, 0%, .15);
+  background: var(--transparency-dark-15);
 }
 
 .navbar-default .navbar-nav>li>a:hover,
@@ -709,12 +733,12 @@ tr td.row-extra-text,
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-  background-color: hsla(0, 0%, 100%, .08) !important;
+  background: var(--transparency-dark-10) !important;
   color: var(--text-hover) !important;
 }
 
 .navbar-default .navbar-nav>li>a.active {
-  background-color: hsla(0, 0%, 0%, .15) !important;
+  background: var(--transparency-dark-15) !important;
   color: rgb(var(--accent-color)) !important;
 }
 
@@ -724,7 +748,7 @@ tr td.row-extra-text,
 
 .colmask {
   border: none;
-  background-color: rgba(0, 0, 0, .25);
+  background: var(--transparency-dark-25);
 }
 
 .padTable:not(.ui-sortable) {
@@ -752,7 +776,7 @@ table {
 
 .alt,
 .infoTableSeperator.alt {
-  background-color: rgba(0, 0, 0, .25);
+  background: var(--transparency-dark-25);
 }
 
 .info-container {
@@ -784,29 +808,16 @@ table {
 
 .form-control.advanced-button.config-hover {
   color: var(--text-hover);
-  background-color: rgba(255, 255, 255, 0.25);
+  background: var(--transparency-light-25);
   border-color: rgba(255, 255, 255, 0.25);
   border-radius: 3px !important;
 }
 
 .form-control.advanced-button.config-hover:hover {
   color: var(--text-hover);
-  background-color: rgba(255, 255, 255, 0.3);
+  background: var(--transparency-light-30);
   border-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px !important;
-}
-
-.form-control::-moz-placeholder {
-  color: var(--text-muted) !important;
-  opacity: 1
-}
-
-.form-control:-ms-input-placeholder {
-  color: var(--text-muted) !important;
-}
-
-.form-control::-webkit-input-placeholder {
-  color: var(--text-muted) !important;
 }
 
 .col2 p,
@@ -824,7 +835,7 @@ input[type="date"],
 textarea,
 select {
   border: none;
-  background-color: rgba(0, 0, 0, 0.15);
+  background: var(--transparency-dark-15);
   border-radius: 3px !important;
   color: var(--text-hover) !important;
   outline: none;
@@ -872,7 +883,7 @@ input[type="text"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
 input[type="week"]:focus {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: var(--transparency-light-10);
   border: none;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
@@ -880,7 +891,7 @@ input[type="week"]:focus {
 
 input[type="date"] {
   background: transparent;
-  color: white;
+  color: var(--text-hover);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -921,7 +932,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .Servers .ct-label {
-  color: white;
+  color: var(--text-hover);
 }
 
 .Servers .ct-series-a .ct-point {
@@ -956,31 +967,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input[disabled],
 select[disabled] {
-  background-color: #1f1f1f;
+  background-color: var(--drop-down-menu-bg);
   opacity: .5;
 }
 
 input[disabled]:hover,
 select[disabled]:hover {
-  background-color: #1f1f1f;
+  background-color: var(--drop-down-menu-bg);
   opacity: .5;
 }
 
 
 /*Folder modal*/
 .list-group-item {
-  background-color: rgba(0, 0, 0, 0.25);
+  background: var(--transparency-dark-25);
   border: none;
 }
 
 .example {
-  background-color: rgba(255, 255, 255, 0.15);
+  background: var(--transparency-light-15);
 }
 
 /*modal*/
 .modal-content {
   background: var(--modal-bg-color);
-  background-repeat: repeat, no-repeat;
   background-attachment: fixed, fixed;
   background-position: center center, center center;
   background-size: auto, cover;
@@ -1009,6 +1019,8 @@ select[disabled]:hover {
   -webkit-background-size: auto, cover;
   -moz-background-size: auto, cover;
   -o-background-size: auto, cover;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .modal-body>.nav-tabs>li>a {
@@ -1021,7 +1033,7 @@ select[disabled]:hover {
 .modal-body>.nav-tabs>li.active>a:hover,
 .modal-body>.nav-tabs>li.active>a:focus {
   color: rgb(var(--accent-color)) !important;
-  background-color: hsla(0, 0%, 100%, .08) !important;
+  background: var(--transparency-dark-10) !important;
   border: transparent;
   border-bottom-color: transparent;
   cursor: default;
@@ -1033,7 +1045,7 @@ select[disabled]:hover {
 
 .modal-body>.nav>li>a:hover,
 .modal-body>.nav>li>a:focus {
-  background-color: hsla(0, 0%, 100%, .08) !important;
+  background: var(--transparency-dark-10) !important;
   color: var(--text-hover) !important;
 }
 
@@ -1049,12 +1061,12 @@ select[disabled]:hover {
 }
 
 #modal-options .tab-content h4 {
-  color: white;
+  color: var(--text-hover);
 }
 
 #modal-options .options-switch label,
 #modal-options #options-orphans .process-all-orphaned {
-  color: white;
+  color: var(--text-hover);
 }
 
 #modal-options #options-status small {
@@ -1069,11 +1081,11 @@ select[disabled]:hover {
 
 #modal-options .table-server-connections thead {
 
-  background-color: rgba(0, 0, 0, .25);
+  background: var(--transparency-dark-25);
 }
 
 #modal-options .table-server-connections thead {
-  background-color: rgba(0, 0, 0, .25);
+  background: var(--transparency-dark-25);
 }
 
 #modal-item-files .item-files-table .progress small {
@@ -1091,7 +1103,7 @@ a.list-group-item:focus,
 button.list-group-item:focus {
   text-decoration: none;
   color: var(--text-hover);
-  background-color: rgba(255, 255, 255, 0.08);
+  background: var(--transparency-light-10);
 }
 
 .form-control {
@@ -1099,7 +1111,7 @@ button.list-group-item:focus {
 }
 
 .fade.in {
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--transparency-dark-60)
 }
 
 .fade {
@@ -1132,11 +1144,11 @@ fieldset[disabled] .form-control {
 }
 
 .language:hover {
-  background-color: rgb(255 255 255 / 10%);
+  background: var(--transparency-light-10);
 }
 
 .container .quoteBlock {
-  background-color: rgb(0 0 0 / 25%);
+  background: var(--transparency-dark-25);
 }
 
 #content a,
@@ -1144,7 +1156,7 @@ fieldset[disabled] .form-control {
 #content a:active,
 #content a:visited,
 #serverResponse {
-  color: #eee;
+  color: var(--text);
 }
 
 /* interface configuration */

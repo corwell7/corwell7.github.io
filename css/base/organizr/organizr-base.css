@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900);
+@import url("/css/defaults/placeholders.css");
+@import url("/css/defaults/transparent.css");
 /*Theme Colors*/
 /*bootstrap Color*/
 /*Normal Color*/
@@ -21,19 +23,7 @@
     border: 1px solid rgb(var(--accent-color), 0.5);
 }
 
-.modal-content,
-.mfp-content .panel {
-    background: var(--modal-bg-color);
-    background-repeat: repeat, no-repeat !important;
-    background-attachment: fixed, fixed !important;
-    background-position: center center, center center !important;
-    background-size: auto, cover !important;
-    -webkit-background-size: auto, cover !important;
-    -moz-background-size: auto, cover !important;
-    -o-background-size: auto, cover !important;
-}
 
-[id*="homepage-"]>fieldset>div>div.panel-wrapper.collapse.in>div>div,
 [id$="-settings-items"]>div {
     background: var(--modal-bg-color);
     background-repeat: repeat, no-repeat !important;
@@ -59,6 +49,10 @@
 .panel-default .panel-body,
 .panel-white .panel-body {
     color: var(--text);
+}
+
+#HEALTHCHECKS-settings-items [id*="Services"] .row.m-b-40 {
+    background: rgba(0, 0, 0, 0)
 }
 
 .h1,
@@ -118,23 +112,23 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--text-hover) !important;
+    color: var(--text-hover) !important; 
 }
 
-.badge {
+.badge:not(.homepage-drag .badge) {
     background-color: rgb(var(--accent-color));
     color: var(--label-text-color);
 }
 
 .tabLoaded {
-    -webkit-filter: drop-shadow(0 0 2px transparent);
-    filter: drop-shadow(0 0 2px transparent);
+    -webkit-filter: drop-shadow(0 0 5px rgb(var(--accent-color)));
+    filter: drop-shadow(0 0 5px rgb(var(--accent-color)));
     color: var(--text-hover)
 }
 
 .active .tabLoaded {
-    -webkit-filter: drop-shadow(0 0 5px transparent);
-    filter: drop-shadow(0 0 5px transparent);
+    -webkit-filter: drop-shadow(0 0 2px rgb(var(--accent-color)));
+    filter: drop-shadow(0 0 2px rgb(var(--accent-color)));
     color: rgb(var(--accent-color));
 }
 
@@ -156,20 +150,20 @@ h6 {
     color: var(--text-hover);
 }
 
-.btn:not(.btn-danger):not(.bg-plex):not(.btn-youtube):not(.btn-info.btn-circle):not(.btn-success),
+.btn:not(.btn-danger):not(.bg-plex):not(.btn-youtube):not(.btn-info.btn-circle):not(.btn-success):not(.log-label):not(.log-details),
 .cbutton {
-    background: var(--button-color) !important;
-    border-color: var(--button-color) !important;
-    color: var(--button-text) !important;
+    background: var(--button-color);
+    border-color: var(--button-color);
+    color: var(--button-text);
 }
 
-.btn:hover:not(.btn-danger):not(.bg-plex):not(.btn-youtube):not(.btn-info.btn-circle):not(.btn-success),
-.btn:active:not(.btn-danger):not(.bg-plex):not(.btn-youtube):not(.btn-info.btn-circle):not(.btn-success),
-.btn:focus:not(.btn-danger):not(.bg-plex):not(.btn-youtube):not(.btn-info.btn-circle):not(.btn-success),
+.btn:hover:not(.btn-danger):not(.bg-plex):not(.btn-youtube):not(.btn-info.btn-circle):not(.btn-success):not(.log-label):not(.log-details),
+.btn:active:not(.btn-danger):not(.bg-plex):not(.btn-youtube):not(.btn-info.btn-circle):not(.btn-success):not(.log-label):not(.log-details),
+.btn:focus:not(.btn-danger):not(.bg-plex):not(.btn-youtube):not(.btn-info.btn-circle):not(.btn-success):not(.log-label):not(.log-details),
 .cbutton:hover {
-    background: var(--button-color-hover) !important;
-    border-color: var(--button-color-hover) !important;
-    color: var(--button-text-hover) !important;
+    background: var(--button-color-hover);
+    border-color: var(--button-color-hover);
+    color: var(--button-text-hover);
 }
 
 .cbutton {
@@ -198,17 +192,9 @@ h6 {
 .panel-info .panel-heading {
     border-color: rgb(var(--accent-color));
     color: var(--text-hover);
-    background: var(--modal-bg-color);
-    background-repeat: repeat, no-repeat;
-    background-attachment: fixed, fixed;
-    background-position: center center, center center;
-    background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
 }
 
-.panel-body:not(.unifiCards .panel-body):not(body > div.swal-overlay.swal-overlay--show-modal > div > div > div > div.panel-wrapper.collapse.in > div) {
+/* .panel-body:not(.unifiCards .panel-body):not(body > div.swal-overlay.swal-overlay--show-modal > div > div > div > div.panel-wrapper.collapse.in > div) {
     background: var(--modal-bg-color);
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
@@ -217,7 +203,7 @@ h6 {
     -webkit-background-size: auto, cover;
     -moz-background-size: auto, cover;
     -o-background-size: auto, cover;
-}
+} */
 
 .bg-plex:not(h2 .bg-plex) {
     background: #e5a00d;
@@ -228,14 +214,16 @@ h6 {
 .tabs-style-flip nav a,
 .nav-tabs>li>a {
     color: var(--text-hover);
+    transition: color .3s;
 }
 
 .customtab2 li.active a,
 .customtab2 li.active a:focus,
 .customtab2 li.active a:hover {
-    background: rgba(0, 0, 0, 0.25) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(var(--accent-color), 0.15) !important;
+    border-color: rgba(var(--accent-color), 0.1) !important;
     border-radius: 20px;
+    color: rgb(var(--accent-color)) !important;
 }
 
 /*toast*/
@@ -271,11 +259,46 @@ h6 {
 /* settings */
 /* header*/
 [id*="settings-"]>div>div.panel-heading:not(form > div > div.panel-heading) {
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25)
+}
+[id*="settings-"]>div>div.panel-heading .bg-org:not(form > div > div.panel-heading) {
+    background: var(--transparency-dark-25)
+}
+
+#account-area > div > div > div > div,
+[id*="homepage-"] > fieldset > div,
+#speedtest-area > div > div {
+    background: var(--modal-bg-color);
+    background-repeat: repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    background-position: center center, center center;
+    background-size: auto, cover;
+    -webkit-background-size: auto, cover;
+    -moz-background-size: auto, cover;
+    -o-background-size: auto, cover;
+}
+
+
+#homepage-Deluge-form > fieldset > div > div.panel-wrapper.collapse.in > div > div > div > div.tab-pane.fade.in.active > div > div > div > div > div > div > div {
+    background: var(--transparency-dark-10)
+}
+
+/* Homepage Item Modals*/
+[id$="API-SOCKS"] > div:nth-child(1) > div.col-md-12.p-b-10 > div > div > div,
+[id$="About"] > div > div > div > div > div,
+[id$="Enable"] > div > div > div > div > div > div > div,
+[id$="FYI"] > div > div > div > div > div > div > div,
+#\39 w59f92rirFYI > div > div > div > div > div > div > div,
+[id$="Setup"] > div > div > div > div > div {
+    background: var(--transparency-dark-25)
+}
+
+[id*="settings-"] .panel {
+    background: var(--transparency-dark-25)
 }
 
 #customize-appearance-form>ul>li.active>a {
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25)
 }
 
 #settings-main-system-settings {
@@ -292,39 +315,39 @@ h6 {
 /* forms */
 select.form-control:focus {
     box-shadow: none;
-    background: #1f1f1f;
+    background: var(--drop-down-menu-bg);
     border: 1px solid rgba(120, 130, 140, 0.4);
 }
 
 .form-material .form-control:focus,
 .form-control:focus {
-    background: rgba(0, 0, 0, 0.45);
+    background: var(--transparency-dark-45);
     border: 1px solid rgba(255, 255, 255, 0.1);
 
 }
 
 .form-material .form-control,
 .form-control {
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
     border-radius: 3px;
 }
 
 #githubVersions .bg-org {
-    background: rgba(0, 0, 0, 0.25) !important;
+    background: var(--transparency-dark-25) !important;
 }
 
 /* Ace editor stuff */
 .ace-idle-fingers {
-    background-color: rgb(0 0 0 / 25%) !important;
+    background: var(--transparency-dark-25) !important;
     color: var(--text-hover) !important;
 }
 
 .ace-idle-fingers .ace_marker-layer .ace_active-line {
-    background: rgba(255, 255, 255, 0.15) !important;
+    background: var(--transparency-light-15) !important;
 }
 
 .ace-idle-fingers .ace_gutter {
-    background: rgb(255 255 255 / 10%) !important;
+    background: var(--transparency-light-10) !important;
     color: var(--text-hover) !important;
 }
 
@@ -359,7 +382,7 @@ pre {
 
 #loginLogTable>tbody>.even,
 #organizrLogTable>tbody>.even {
-    background: rgba(255, 255, 255, 0.10);
+    background: var(--transparency-light-10);
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
@@ -377,42 +400,6 @@ pre {
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:active {
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
-}
-
-/* PLACEHOLDERS */
-input::-webkit-input-placeholder {
-    color: var(--text) !important;
-}
-
-input:focus::-webkit-input-placeholder {
-    color: var(--text-hover) !important;
-}
-
-/* Firefox < 19 */
-input:-moz-placeholder {
-    color: var(--text) !important;
-}
-
-input:focus:-moz-placeholder {
-    color: var(--text-hover) !important;
-}
-
-/* Firefox > 19 */
-input::-moz-placeholder {
-    color: var(--text) !important;
-}
-
-input:focus::-moz-placeholder {
-    color: var(--text-hover) !important;
-}
-
-/* Internet Explorer 10 */
-input:-ms-input-placeholder {
-    color: var(--text) !important;
-}
-
-input:focus:-ms-input-placeholder {
-    color: var(--text-hover) !important;
 }
 
 /* Scrollbar */
@@ -445,7 +432,7 @@ input:focus:-ms-input-placeholder {
     min-height: 50px;
     border: 3px solid transparent;
     border-radius: 8px;
-    background-color: hsla(0, 0%, 100%, .2);
+    background: var(--transparency-dark-20);
     background-clip: padding-box;
 }
 
@@ -457,7 +444,7 @@ input:focus:-ms-input-placeholder {
     min-height: 50px;
     border: 3px solid transparent;
     border-radius: 8px;
-    background-color: hsla(0, 0%, 100%, .5);
+    background: var(--transparency-light-50);
     background-clip: padding-box;
 }
 
@@ -492,7 +479,7 @@ th.jsgrid-control-field.jsgrid-align-center {
 .jsGrid-Users,
 .jsgrid-header-sort-desc,
 .jsgrid-header-sort-asc {
-    background: rgba(0, 0, 0, 0.25) !important;
+    background: var(--transparency-dark-25) !important;
 }
 
 tr.jsgrid-header-row th {
@@ -508,14 +495,14 @@ tr.jsgrid-header-row th {
 
 .jsgrid-filter-row>td,
 .jsgrid-header-sortable:hover {
-    background: rgba(0, 0, 0, 0.45) !important;
+    background: var(--transparency-dark-45) !important;
     color: var(--text-hover) !important;
 }
 
 /* Calendar */
 
 #calendar .fc-content-skeleton>table>thead>tr {
-    background: rgba(0, 0, 0, 0.15);
+    background: var(--transparency-dark-15)
 }
 
 .fc-event:not(.homepage-drag),
@@ -540,12 +527,12 @@ tr.jsgrid-header-row th {
 .fc-unthemed .fc-row,
 .fc-unthemed .fc-popover {
     border-color: transparent;
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--transparency-dark-05)
 }
 
 .bg-theme,
 .fc-day-header {
-    background: rgba(0, 0, 0, .3) !important;
+    background: var(--transparency-dark-30) !important;
 }
 
 .bg-theme,
@@ -557,15 +544,15 @@ tr.jsgrid-header-row th {
 .fc th.fc-wed,
 .fc th.fc-fri,
 .fc-button {
-    background-color: rgba(0, 0, 0, 0.25) !important;
+    background: var(--transparency-dark-25) !important;
 }
 
 th.fc-day-header.fc-widget-header.fc-today {
-    background-color: rgba(0, 0, 0, 0.25) !important;
+    background: var(--transparency-dark-25) !important;
 }
 
 .fc-widget-content.fc-today {
-    background-color: rgba(255, 255, 255, 0.25) !important;
+    background: var(--transparency-light-25) !important;
 }
 
 .fc-popover {
@@ -623,7 +610,7 @@ th.fc-day-header.fc-widget-header.fc-today {
     #lockScreen .white-box {
         width: 100% !important;
         height: 100% !important;
-        background: rgb(0 0 0 / 45%) !important;
+        background: var(--transparency-dark-45) !important;
         margin-top: auto !important;
         border-radius: 0px !important;
     }
@@ -665,7 +652,7 @@ th.fc-day-header.fc-widget-header.fc-today {
 }
 
 .blockMsg {
-    background: rgba(0, 0, 0, 0.9) !important;
+    background: var(--transparency-dark-90) !important;
     border: none !important;
 }
 
@@ -673,7 +660,7 @@ th.fc-day-header.fc-widget-header.fc-today {
 #plex-login-heading>a,
 #recoverform>div:nth-child(1)>div>h3,
 #recoverform>div:nth-child(1)>div>p {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 #login-username-Input::placeholder,
@@ -689,15 +676,15 @@ label[for="checkbox-login"] {
 
 #to-recover:hover,
 label[for="checkbox-login"]:hover {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 #organizr-login-collapse>div>div.form-group.text-center.m-t-20.m-b-0>div>button,
 #recoverform>div:nth-child(3)>div>button,
 #leave-recover,
 #form-lockscreen>div.form-group.text-center>div>button {
-    background: rgb(255 255 255 / 15%) !important;
-    color: #eee !important;
+    background: var(--transparency-light-15) !important;
+    color: var(--text)  !important;
     border-radius: 25px;
     border: none;
 }
@@ -707,10 +694,10 @@ label[for="checkbox-login"]:hover {
         -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         border-radius: 15px;
-        background-color: rgba(0, 0, 0, 0.45) !important;
+        background: var(--transparency-dark-45) !important;
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        color: white !important;
+        color: var(--text-hover)  !important;
     }
 }
 
@@ -743,16 +730,16 @@ label[for="checkbox-login"]:hover {
 /*2FA login button*/
 .panel-wrapper .panel-body>.btn-warning,
 .btn-warning.disabled {
-    background: hsla(0, 0%, 0%, 0.25) !important;
+    background: var(--transparency-dark-25) !important;
     border: 1px solid #ffc36d00 !important;
 }
 
 /*2FA animation header*/
 .panel-warning .panel-heading,
 .panel-yellow .panel-heading {
-    color: #fff;
+    color: var(--text-hover);
     border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background: var(--transparency-dark-30);
     border-color: #00000000;
 }
 
@@ -786,7 +773,7 @@ label[for="checkbox-login"]:hover {
 }
 
 #form-lockscreen>div:nth-child(1)>div>div>h3 {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 .login-sidebar .white-box {
@@ -804,7 +791,7 @@ label[for="checkbox-login"]:hover {
         -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         border-radius: 15px;
-        background-color: rgba(0, 0, 0, 0.45);
+        background: var(--transparency-dark-45);
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
@@ -827,7 +814,7 @@ label[for="checkbox-login"]:hover {
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     #splashScreen {
         overflow-y: scroll;
-        background: rgb(0 0 0 / 80%) !important;
+        background: var(--transparency-dark-80) !important;
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     }
@@ -838,7 +825,7 @@ label[for="checkbox-login"]:hover {
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     #splashScreen {
         overflow-y: scroll;
-        background: rgb(0 0 0 / 90%) !important;
+        background: var(--transparency-dark-90) !important;
     }
 }
 
@@ -900,7 +887,7 @@ label[for="checkbox-login"]:hover {
 
 #splashScreen .flexbox:last-of-type .bg-danger {
     background: transparent !important;
-    color: #fff !important;
+    color: var(--text-hover) !important;
     border: 0 !important;
     border-radius: 100px;
     height: 0px !important;
@@ -965,7 +952,7 @@ label[for="checkbox-login"]:hover {
 }
 
 .splash-badge {
-    color: #fff;
+    color: var(--text-hover);
     width: 80px !important;
     height: 80px;
     font-size: 60px;
@@ -989,12 +976,12 @@ label[for="checkbox-login"]:hover {
 
 .color-table.info-table thead th {
     background-color: rgba(61, 33, 33, 0.25);
-    color: #fff;
+    color: var(--text-hover);
 }
 
 .bg-success.text-inverse {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    color: #FFF;
+    background: var(--transparency-light-15) !important;
+    color: var(--text-hover);
 }
 
 .panel-blue a,
@@ -1076,7 +1063,7 @@ label[for="checkbox-login"]:hover {
 
 /* Homepage Now playing card */
 .nowPlayingItem>.white-box>.el-card-item {
-    background: rgba(0, 0, 0, 0.15) !important;
+    background: var(--transparency-dark-15) !important;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
@@ -1085,7 +1072,7 @@ label[for="checkbox-login"]:hover {
 .icon-control-play,
 .icon-screen-desktop,
 .icon-control-pause {
-    color: white !important;
+    color: var(--text-hover)  !important;
 }
 
 .label-info {
@@ -1113,8 +1100,8 @@ label[for="checkbox-login"]:hover {
 .panel-black .panel-heading,
 .panel-inverse .panel-heading {
     border-color: transparent;
-    color: #fff;
-    background: var(--main-bg-color);
+    color: var(--text-hover);
+    background: var(--modal-bg-color);
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
     background-position: center center, center center;
@@ -1154,7 +1141,6 @@ label[for="checkbox-login"]:hover {
 .nav-tabs>li.active>a:hover {
     cursor: pointer;
     opacity: 1;
-    background: rgb(var(--accent-color) , .15) !important;
 }
 
 #homepageOrderdownloader .nav-tabs>li.active>a,
@@ -1171,7 +1157,7 @@ label[for="checkbox-login"]:hover {
 
 #homepageOrderdownloader .nav-tabs>li.active>a:hover,
 #homepageOrderdownloader .nav-tabs>li.active:hover {
-    background: rgba(0, 0, 0, 0.25) !important;
+    background: var(--transparency-dark-25) !important;
     opacity: 1;
 }
 
@@ -1206,7 +1192,7 @@ label[for="checkbox-login"]:hover {
 }
 
 .fc-button:hover {
-    background: rgba(255, 255, 255, .08) !important;
+    background: var(--transparency-light-10) !important;
 }
 
 .fc-button {
@@ -1417,8 +1403,8 @@ a:hover,
 
 .el-element-overlay .el-card-item .el-overlay-1 .el-info>li a:hover {
     background: transparent;
-    color: white !important;
-    border: white !important;
+    color: var(--text-hover);
+    border: var(--text-hover);
 }
 
 .progress-bar-info {
@@ -1428,13 +1414,13 @@ a:hover,
 
 .progress-bar-inverse,
 .progress {
-    background: rgba(255, 255, 255, 0.25) !important;
+    background: var(--transparency-light-25) !important;
 }
 
 /* Homepage health checks */
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     .bg-inverse .healthPosition {
-        background: rgba(255, 255, 255, 0.2) !important;
+        background: var(--transparency-light-20) !important;
         -webkit-backdrop-filter: saturate(180%) blur(30px);
         backdrop-filter: saturate(180%) blur(30px);
         border-radius: 3px;
@@ -1458,11 +1444,11 @@ a:hover,
 
 .bg-inverse .healthPosition h3,
 .bg-inverse .healthPosition h5 {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 #homepageOrderhealthchecks .card-body {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--transparency-light-20);
 }
 
 .card,
@@ -1470,7 +1456,7 @@ a:hover,
     border-radius: 3px;
 }
 
-.bg-inverse {
+.bg-inverse:not(.homepage-drag):not(.pihole-stat) {
     background: transparent !important;
 }
 
@@ -1481,16 +1467,16 @@ a:hover,
 /* Homepage Tautulli Cards*/
 #homepageOrdertautulli .library-card .card-body,
 #homepageOrdertautulli div:nth-child(8) .card-body {
-    background: rgba(255, 255, 255, .2);
+    background: var(--transparency-light-20)
 }
 
 .homepage-tautulli-card .cardCountType {
-    color: #eee;
+    color: var(--text);
 }
 
 .homepage-tautulli-card .tautulliRank,
 .homepage-tautulli-card .tautulliSeparator {
-    color: #eee;
+    color: var(--text);
 }
 
 .homepage-tautulli-card .bg-img-cont {
@@ -1508,12 +1494,12 @@ a:hover,
 }
 
 .unifiCards .panel-wrapper.collapse.in {
-    background: rgba(0, 0, 0, 0.15);
+    background: var(--transparency-dark-15)
 }
 
 /* Homepage Monitor Cards */
 #homepageOrderMonitorr .card-body {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--transparency-light-20);
 }
 
 #homepageOrderMonitorr .col-lg-2 {
@@ -1534,11 +1520,11 @@ a:hover,
 
 /*Homepage WeatherAndAir Cards*/
 #homepageOrderWeatherAndAir .tabs-style-iconbox nav ul li.tab-current a {
-    background: rgba(0, 0, 0, .2);
+    background: var(--transparency-dark-20);
 }
 
 .health-and-pollutant-section .content-current {
-    background: rgba(255, 255, 255, .2);
+    background: var(--transparency-light-20)
 }
 
 #homepageOrderWeatherAndAir .tabs-style-iconbox nav ul li.tab-current a::after {
@@ -1554,13 +1540,13 @@ a:hover,
 }
 
 #homepageOrderWeatherAndAir .white-box {
-    background: rgba(255, 255, 255, .1);
+    background: var(--transparency-light-10);
     border-radius: 3px;
 }
 
 /*Homepage Speedtest Cards*/
 #allSpeedtest .speedtest-card {
-    background-color: rgba(255, 255, 255, .1);
+    background: var(--transparency-light-10);
 }
 
 #allSpeedtest .speedtest-card .text-muted,
@@ -1573,9 +1559,10 @@ a:hover,
     box-shadow: none !important;
 }
 
-.swal-overlay--show-modal .swal-modal:not(.swal-modal.orgAlertTransparent),
-body > div.swal-overlay.swal-overlay--show-modal > div > div > div > div > div.panel-heading {
-    background: var(--main-bg-color);
+.swal-modal,
+body > div.swal-overlay.swal-overlay--show-modal > div > div > div > div > div.panel-heading,
+body > div.swal-overlay.swal-overlay--show-modal > div {
+    background: var(--modal-bg-color);
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
     background-position: center center, center center;
@@ -1611,7 +1598,7 @@ body > div.swal-overlay.swal-overlay--show-modal > div > div > div > div > div.p
 
 #user-list-div .ms-container .ms-selectable,
 #user-list-div .ms-container .ms-selection {
-    background: rgb(0 0 0 / 25%);
+    background: var(--transparency-dark-25);
     color: var(--text);
 }
 
@@ -1644,6 +1631,7 @@ body > div.swal-overlay.swal-overlay--show-modal > div > div > div > div > div.p
 .customvtab .tabs-vertical li.active a:hover {
     border-right: 2px solid rgb(var(--accent-color));
     color: rgb(var(--accent-color));
+    transition: background-color .3s;
 }
 
 .vtabs .tabs-vertical li a {
@@ -1652,7 +1640,9 @@ body > div.swal-overlay.swal-overlay--show-modal > div > div > div > div > div.p
 
 .vtabs .nav>li>a:focus,
 .vtabs .nav>li>a:hover {
-    background-color: rgba(var(--accent-color), .15);
+    color: rgba(var(--accent-color));
+    background: transparent;
+    transition: color .3s;
 }
 
 /* THEME PARK CUSTOM END*/
@@ -1708,7 +1698,7 @@ body {
 }
 
 .navbar-header {
-    background: var(--main-bg-color);
+    background: none;
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
     background-position: center center, center center;
@@ -1725,14 +1715,7 @@ body {
 .nav .open>a,
 .nav .open>a:focus,
 .nav .open>a:hover {
-    background: var(--modal-bg-color);
-    background-repeat: repeat, no-repeat;
-    background-attachment: fixed, fixed;
-    background-position: center center, center center;
-    background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
+    background: var(--transparency-dark-25)
 }
 
 /*Right panel*/
@@ -1761,25 +1744,11 @@ background: rgb(0 0 0 / 0%) !important;
 }
  .navbar-default,
 .sidebar .sidebar-head {
-    background: var(--main-bg-color);
-    background-repeat: repeat, no-repeat;
-    background-attachment: fixed, fixed;
-    background-position: center center, center center;
-    background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
+    background: rgb(0 0 0 / 0%);
 } 
 
 .sidebar  {
-    background: var(--main-bg-color);
-    background-repeat: repeat, no-repeat;
-    background-attachment: fixed, fixed;
-    background-position: center center, center center;
-    background-size: auto, cover;
-    -webkit-background-size: auto, cover;
-    -moz-background-size: auto, cover;
-    -o-background-size: auto, cover;
+    background: var(--transparency-dark-25);
     box-shadow: 1px 0px 20px rgb(0 0 0 / 20%);
 
 }
@@ -1863,7 +1832,7 @@ background: rgb(0 0 0 / 0%) !important;
 }
 
 .dropdown-menu {
-    background: var(--drop-down-menu-bg) !important;
+    background: var(--drop-down-menu-bg);
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
     background-position: center center, center center;
@@ -1900,7 +1869,7 @@ background: rgb(0 0 0 / 0%) !important;
 }
 
 /*Button*/
-.btn-custom {
+.btn-custom{
     background: var(--button-color);
     border: 1px solid var(--button-color);
     color: var(--button-text);
@@ -1913,6 +1882,21 @@ background: rgb(0 0 0 / 0%) !important;
     border: 1px solid var(--button-color-hover);
 }
 
+.swal-button {
+    outline: none;
+    background: var(--button-color);
+    border: 1px solid var(--button-color);
+    color: var(--button-text);
+    border-radius: 0px;
+}
+.swal-button:focus,.swal-button:active {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0), 0 0 0 3px rgb(var(--accent-color),.25);
+}
+.swal-button:not([disabled]):hover,.swal-button:active {
+    background-color: var(--button-color-hover);
+    color: var(--button-text-hover);
+    border: 1px solid var(--button-color-hover);
+}
 /*Custom tab
 .customtab li.active a,
 .customtab li.active a:hover,
@@ -2055,9 +2039,6 @@ body>div.mfp-wrap.mfp-auto-cursor.mfp-zoom-out.mfp-ready>div>div.mfp-content>div
     -o-background-size: auto, cover;
 }
 
-.panel {
-    background: #1b1a1a;
-}
 
 .form-control,
 input,
@@ -2101,12 +2082,14 @@ input,
 .customtab2 li.active a:hover {
     background: #1f1f1f;
     border-radius: 20px;
+    border: 0;
+    transition: background-color .3s;
 }
 
 .nav-tabs>li>a:hover {
-    background: rgba(0, 0, 0, 0.25) !important;
-    border-radius: 0px;
-    color: var(--text-hover);
+    background: transparent !important;
+    border-radius: 20px;
+    color: rgb(var(--accent-color)) !important;
 }
 
 .tabs-style-flip nav a:focus,
@@ -2125,7 +2108,7 @@ input,
 }
 
 
-#account-area>div>div>div>div>div.panel-wrapper.collapse.in.main-email-panel>div {
+/* #account-area>div>div>div>div>div.panel-wrapper.collapse.in.main-email-panel>div {
     background: var(--modal-bg-color);
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
@@ -2134,7 +2117,7 @@ input,
     -webkit-background-size: auto, cover;
     -moz-background-size: auto, cover;
     -o-background-size: auto, cover;
-}
+} */
 
 .tab-content .panel .panel-body,
 .tab-content .panel .panel-body .bg-org {
@@ -2272,7 +2255,7 @@ fieldset[disabled] .form-control {
 
 .fc-unthemed .fc-divider,
 .fc-unthemed .fc-popover .fc-header {
-    background: #1f1f1f;
+    background: var(--drop-down-menu-bg);
 }
 
 .table-hover>tbody>tr:hover,
@@ -2289,7 +2272,7 @@ fieldset[disabled] .form-control {
 .table>thead>tr.active>th,
 .table>thead>tr>td.active,
 .table>thead>tr>th.active {
-    background-color: rgba(0, 0, 0, 0.25) !important;
+    background: var(--transparency-dark-25) !important;
 }
 
 .asColorPicker-dropdown,
@@ -2299,7 +2282,7 @@ fieldset[disabled] .form-control {
 .customvtab .tabs-vertical li.active a,
 .customvtab .tabs-vertical li.active a:focus,
 .customvtab .tabs-vertical li.active a:hover,
-.dropdown-menu,
+/* .dropdown-menu, */
 .fc-day,
 .footable-row-detail,
 .img-thumbnail,
@@ -2342,9 +2325,9 @@ table.dataTable tbody tr {
 
 .btn-default,
 .chat-list .chat-text h4,
-.dropdown-menu>li>a,
+/* .dropdown-menu>li>a,
 .dropdown-menu>li>a:focus,
-.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:hover, */
 .flot-text,
 .footer,
 .form-control,
@@ -2381,7 +2364,7 @@ h6 .small,
 h6 small,
 tbody,
 th {
-    color: #ffffff;
+    color: var(--text-hover);
 }
 
 .bootstrap-tagsinput,
@@ -2416,7 +2399,7 @@ th {
 .pager li>span,
 .pagination>li>a,
 .pagination>li>span,
-.panel:not(#invite-area > div > div > div.col-md-12 > div):not(#login-panels > div),
+/* .panel:not(#invite-area > div > div > div.col-md-12 > div):not(#login-panels > div), */
 .panel-default .panel-body,
 .panel-default .panel-footer,
 .panel-default .panel-heading,
@@ -2435,33 +2418,37 @@ pre,
 select,
 table.dataTable.display tbody tr.odd,
 table.dataTable.stripe tbody tr.odd {
-    background: rgba(0, 0, 0, 0.15);
+    background: var(--transparency-dark-15)
 }
 
 input:focus:not(select),
 input:active:not(select),
 .form-control:focus:not(select),
 .form-control:active:not(select) {
-    background: rgba(0, 0, 0, 0.445);
+    background: var(--transparency-dark-45);
     border: 1px solid rgba(120, 130, 140, 0.4);
 }
 
+select:focus {
+    background: var(--drop-down-menu-bg);
+    color: var(--text);
+}
 
 .cp-container .cp-pills li a {
     padding: 5px;
-    color: #FFF;
+    color: var(--text-hover);
     text-decoration: none;
 }
 
 .cp-container .cp-pills li a.active,
 .cp-container .cp-pills li a:hover {
     background-color: #2cabe3;
-    color: #fff
+    color: #fff;
 }
 
 .jq-icon-info {
     background-color: rgba(71, 68, 68, 0.93);
-    color: #FFF;
+    color: var(--text-hover);
     border-color: #bce8f1;
 }
 
@@ -2516,4 +2503,32 @@ span.select2-results {
 
 .select2-container--default .select2-results__option[aria-selected=true] {
     background-color: #232323;
+}
+
+/* .panel-info>.panel-heading {
+    background-color: rgba(var(--accent-color));
+} */
+
+.panel-blue .panel-heading, .panel-info .panel-heading, #help-modal-body > div > div {
+    background: var(--transparency-dark-25);
+}
+#account-area > div > div > div > div > div.panel-wrapper.collapse.in.main-email-panel > div > div > div  > div > div,
+#plexRecent > div.col-lg-12 > div,
+#overseerr-requests > div.col-lg-12 > div,
+body > div.swal-overlay.swal-overlay--show-modal > div > div > div > div {
+    background: transparent;
+}
+
+[id$="-settings-page"] .bg-org, .modal-content,
+body > div.swal-overlay.swal-overlay--show-modal > div > div > div,
+#email-area > div > div > div.row > div > div,
+#invite-area > div > div > div.col-md-12 > div {
+    background: var(--modal-bg-color);
+    background-repeat: repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    background-position: center center, center center;
+    background-size: auto, cover;
+    -webkit-background-size: auto, cover;
+    -moz-background-size: auto, cover;
+    -o-background-size: auto, cover;
 }

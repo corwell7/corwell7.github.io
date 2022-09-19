@@ -10,6 +10,8 @@
 /*		   		        Made by @gilbN					 */
 /*			      https://github.com/gilbN/theme.park			 */
 
+@import url("/css/defaults/transparent.css");
+
 body {
     font-family: Open Sans Bold, Helvetica Neue, Helvetica, Arial, sans-serif;
     background: var(--main-bg-color) !important;
@@ -20,7 +22,7 @@ body {
     -webkit-background-size: auto, cover;
     -moz-background-size: auto, cover;
     -o-background-size: auto, cover;
-    color: #FFFFFF !important;
+    color: var(--text-hover) !important;
 }
 
 /* Scrollbar */
@@ -56,13 +58,13 @@ body {
 }
 
 .expand::-webkit-scrollbar-thumb {
-    background-color: hsla(0, 0%, 100%, .2) !important;
+    background: var(--transparency-dark-20) !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
 
 .expand::-webkit-scrollbar-thumb:hover {
-    background-color: hsla(0, 0%, 100%, .5) !important;
+    background: var(--transparency-light-50) !important;
 }
 
 body::-webkit-scrollbar-track {
@@ -76,18 +78,18 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: hsla(0, 0%, 100%, .2) !important;
+    background: var(--transparency-dark-20) !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
 
 body::-webkit-scrollbar-thumb:hover {
-    background-color: hsla(0, 0%, 100%, .5) !important;
+    background: var(--transparency-light-50) !important;
 }
 
 .flex-child {
     border-radius: 0px;
-    background-color: rgba(255, 255, 255, 0.08);
+    background: var(--transparency-light-10);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -121,7 +123,7 @@ body.fade-out {
 .nav-item,
 .filesize,
 .path {
-    color: #ffffff;
+    color: var(--text-hover);
 }
 
 #username:hover,
@@ -131,7 +133,7 @@ body.fade-out {
 
 #categoryFilter,
 #auto-update {
-    color: white !important;
+    color: var(--text-hover) !important;
     background-color: transparent !important;
     box-shadow: none;
     border-radius: 0px;
@@ -158,12 +160,12 @@ body.fade-out {
 }
 
 .expandtoggle:hover {
-    background-color: rgba(255, 255, 255, 0.08) !important;
+    background: var(--transparency-light-10) !important;
 }
 
 .expandtoggle:checked~.expandtoggle::before {
     content: "";
-    background: url(https://raw.githubusercontent.com/gilbN/theme.park/master/resources/logarr/increase.png) no-repeat;
+    background: url(/resources/logarr/increase.png) no-repeat;
     background-size: 2em;
     display: inline-block;
     width: 2em;
@@ -172,7 +174,7 @@ body.fade-out {
 }
 
 .expandtoggle::before {
-    background: url(https://raw.githubusercontent.com/gilbN/theme.park/master/resources/logarr/decrease.png) no-repeat;
+    background: url(/resources/logarr/decrease.png) no-repeat;
     background-size: 2em;
     content: "";
     display: inline-block;
@@ -190,7 +192,7 @@ body.fade-out {
     overflow: auto;
     transition: height 0.5s;
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.3);
+    background: var(--transparency-dark-30);
     word-wrap: break-word;
     padding: 0 10px 0 10px;
 }
@@ -204,7 +206,7 @@ body.fade-out {
 /* Text Color */
 .alpaca-control-label,
 .alpaca-control.radio {
-    color: white !important;
+    color: var(--text-hover) !important;
 }
 
 .alpaca-form-buttons-container {
@@ -212,11 +214,11 @@ body.fade-out {
 }
 
 .Rtable-cell {
-    color: white !important;
+    color: var(--text-hover) !important;
 }
 
 #colorkey {
-    color: white !important;
+    color: var(--text-hover) !important;
 }
 
 .settingstitle {
@@ -224,7 +226,7 @@ body.fade-out {
 }
 
 #reginfo {
-    color: white !important;
+    color: var(--text-hover) !important;
 }
 
 #infodata {
@@ -263,55 +265,55 @@ input:valid {
 /* Sidebar */
 #sidebar-wrapper {
     box-shadow: none !important;
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:hover:before {
     -webkit-transition: none !important;
     transition: none !important;
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
     transition: none !important;
     -webkit-transition: none !important;
 }
 
 .sidebar-nav li:first-child a {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:nth-child(2):before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:nth-child(3):before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:nth-child(4):before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:nth-child(5):before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:nth-child(6):before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:nth-child(7):before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:nth-child(8):before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 .sidebar-nav li:nth-child(9):before {
-    background-color: rgba(0, 0, 0, 0.07);
+    background: var(--transparency-dark-10);
 }
 
 #modalloading {
@@ -323,14 +325,14 @@ input:valid {
     -webkit-background-size: auto, cover;
     -moz-background-size: auto, cover;
     -o-background-size: auto, cover;
-    color: white !important;
+    color: var(--text-hover) !important;
     border: 1px solid transparent !important;
     box-shadow: 0.5rem 0.5rem 1rem rgb(15, 15, 15, 0.45) !important;
 }
 
 .modaltextloading,
 .modalloadingspinner {
-    color: #FFF !important;
+    color: var(--text-hover) !important;
 }
 
 .container {
@@ -339,7 +341,7 @@ input:valid {
 }
 
 #stats {
-    background-color: rgba(0, 0, 0, .15) !important;
+    background: var(--transparency-dark-15) !important;
     padding-left: .0rem !important;
     padding-right: 1.11rem !important;
     box-shadow: none;
@@ -364,7 +366,7 @@ input:valid {
 }
 
 #servicetitle {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 .btnoffline,
@@ -395,34 +397,34 @@ input:valid {
 
 .btn-group>.btn-group:not(:first-child)>.btn,
 .btn-group>.btn:not(:first-child) {
-    color: white !important;
+    color: var(--text-hover) !important;
 }
 
 .btn-group>.btn:first-child {
-    color: white !important;
+    color: var(--text-hover) !important;
 }
 
 #time {
-    background-color: rgba(0, 0, 0, .15) !important;
-    color: #fff !important;
+    background: var(--transparency-dark-15) !important;
+    color: var(--text-hover) !important;
     box-shadow: none;
 }
 
 #slidertable {
-    background-color: rgba(0, 0, 0, .15) !important;
+    background: var(--transparency-dark-15) !important;
     box-shadow: none;
 }
 
 #textslider {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 .dtg {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 .datemin {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 #center {
@@ -432,14 +434,14 @@ input:valid {
 
 /*Service tile*/
 .col-lg-4 {
-    background-color: rgba(0, 0, 0, .15) !important;
+    background: var(--transparency-dark-15) !important;
     margin: 1rem .1rem 1.5rem 1rem !important;
     width: 9rem !important;
     box-shadow: none;
 }
 
 .col-lg-4:hover {
-    background-color: hsla(0, 0%, 100%, .08) !important;
+    background: var(--transparency-dark-10) !important;
     margin: 1rem .1rem 1.5rem 1rem !important;
     width: 9rem !important;
     box-shadow: none;
@@ -448,7 +450,7 @@ input:valid {
 .servicetile,
 .servicetile:hover,
 .servicetile:focus {
-    color: #ffffff;
+    color: var(--text-hover);
     text-shadow: none !important;
     text-decoration: none !important;
     outline: 0;
@@ -461,7 +463,7 @@ input:valid {
 }
 
 .servicetile {
-    color: #ffffff;
+    color: var(--text-hover);
     text-shadow: none !important;
     text-decoration: none !important;
     outline: 0;
@@ -480,13 +482,13 @@ input:valid {
 }
 
 #clock {
-    background-color: rgba(0, 0, 0, .15) !important;
-    color: #fff !important;
+    background: var(--transparency-dark-15) !important;
+    color: var(--text-hover) !important;
     box-shadow: none;
 }
 
 .date {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 #summary {
@@ -497,7 +499,7 @@ input:valid {
 
 .pace,
 .pace-progress {
-    background: rgba(0, 0, 0, .15) !important;
+    background: var(--transparency-dark-15) !important;
 }
 
 .pace,
@@ -506,12 +508,12 @@ input:valid {
 }
 
 .pace .pace-activity {
-    border-top-color: #FFF !important;
-    border-left-color: #FFF !important;
+    border-top-color: var(--text-hover) !important;
+    border-left-color: var(--text-hover) !important;
 }
 
 .footer {
-    color: white !important;
+    color: var(--text-hover) !important;
 }
 
 .footer:hover {
@@ -549,17 +551,17 @@ input:valid {
 .modalimgpath,
 .modaltext,
 #uploadbutton {
-    color: #fff !important;
+    color: var(--text-hover) !important;
 }
 
 .file-upload {
     background-color: var(--button-color) !important;
-    color: white !important;
+    color: var(--button-text) !important;
 }
 
 .file-upload:hover {
     background-color: var(--button-color-hover) !important;
-    color: white !important;
+    color: var(--button-text) !important;
 }
 
 @media only screen and (max-width: 775px) {
@@ -574,8 +576,8 @@ input:valid {
 
 @media only screen and (max-width: 768px) {
     #dateRight {
-        background-color: rgba(0, 0, 0, .15) !important;
-        color: #fff !important;
+        background: var(--transparency-dark-15) !important;
+        color: var(--text-hover) !important;
         box-shadow: none;
     }
 }

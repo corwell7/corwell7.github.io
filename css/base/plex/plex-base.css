@@ -10,6 +10,9 @@
 /*		   		        Made by @gilbN					 */
 /*			      https://github.com/gilbN/theme.park			 */
 
+@import url("/css/defaults/placeholders.css");
+@import url("/css/defaults/transparent.css");
+
 * {
   outline: none;
 }
@@ -94,7 +97,8 @@ a,
 [class*="PrePlayDetailsGroupItem-groupItem-"] a,
 [class*="MetadataPosterCardTitle-title-"] a,
 a[class*="MetadataPosterCardTitle-title-"],
-[class*="PrePlayTagListLink-tagsListLink-"][class*="Link-default-"] {
+[class*="PrePlayTagListLink-tagsListLink-"][class*="Link-default-"],
+[class*="MetadataPosterCardTitle-title-"] {
   color: var(--link-color)
 }
 
@@ -118,8 +122,11 @@ a[class*="MetadataTableRow-title-"]:hover {
 }
 
 /* BODY */
-html body,
-.application {
+#plex > div[class*="FullPageBackground-backgroundContainer-"] > div > div:nth-child(1) > canvas,
+#plex > div[class*="FullPageBackground-backgroundContainer-"] > div > canvas {
+  display: none !important;
+}
+body,[class*="FullPageBackground-backgroundContainer-"] {
   background: var(--main-bg-color);
   background-repeat: repeat, no-repeat;
   background-attachment: fixed, fixed;
@@ -135,7 +142,7 @@ html body,
 }
 
 [class*="BottomBar-bottomBar-"] {
-  background-color: rgb(0 0 0 / 70%);
+  background: var(--transparency-dark-70);
   box-shadow: 0 0 4px 0 rgb(0 0 0 / 50%);
 }
 
@@ -151,7 +158,7 @@ html body,
 
 [class*="SourceSidebar-openSidebar-"][class*="SourceSidebar-sidebar-"],
 [class*="SourceSidebar-sidebar-"] {
-  background: rgba(0, 0, 0, .25);
+  background: var(--transparency-dark-25)
 }
 
 [class*="SourceSidebar-expandedSidebar-"][class*="SourceSidebar-sidebar-"] {
@@ -170,7 +177,7 @@ html body,
       background: var(--header-blur-background);
       -webkit-backdrop-filter: saturate(1.8) blur(1.5em);
       backdrop-filter: saturate(1.8) blur(1.5em);
-      background-color: rgba(0, 0, 0, .5);
+      background: var(--transparency-dark-50);
   }
 }
 
@@ -198,7 +205,7 @@ html body,
 
 /* NAVBAR */
 [class*="NavBar-container-"] {
-  background: rgba(0, 0, 0, .25) !important;
+  background: var(--transparency-dark-25) !important;
 }
 
 [class*="NavBarActivityButton-isHighlighted-"] [class*="NavBarActivityButton-activityIcon-"] {
@@ -235,6 +242,23 @@ html body,
 
 
 /* ACCENTS */
+
+[class*="TabButton-selected-"] {
+  color: rgb(var(--accent-color));
+}
+
+[class*="TabButton-selected-"]:after {
+  background-color: rgb(var(--accent-color));
+}
+
+[class*="TabButton-selected-"]:hover:after {
+  background-color: rgb(var(--accent-color),.8);
+}
+
+.heart-rating.user-rating, .star-rating.user-rating {
+  color: rgb(var(--accent-color));
+  opacity: 1;
+}
 
 [class*="Badge-primary-"],
 .nav-header>li>a.selected .badge {
@@ -280,7 +304,9 @@ button:hover [class*="DisclosureArrow-disclosureArrow-"] {
   border-color: rgb(var(--accent-color));
 }
 
-[class*="PivotTab-selectedButton-"]:after {
+[class*="PivotTab-selectedButton-"]:after,
+[class*="TabButton-selectedButton-"]:after,
+[class*="PageHeaderTabButton-isSelected-"]:after {
   background-color: rgb(var(--accent-color)) !important;
 }
 
@@ -334,28 +360,28 @@ button:hover [class*="DisclosureArrow-disclosureArrow-"] {
 [class*="SeekBar-seekBarFill-"],
 [class*="VolumeSlider-fill-"],
 [class*="SessionTile-playProgressPercent-"] {
-  background-color: rgb(var(--accent-color));
+  background-color: rgb(var(--accent-color)) !important;
 }
 
 [class*="SeekBar-seekBarBuffer-"],
 [class*="SessionTile-transcodeProgressPercent-"] {
-  background-color: rgba(var(--accent-color), .3);
+  background-color: rgba(var(--accent-color), .3) !important;
 }
 
 [class*="SessionTileDetails-playerContainer-"] {
-  background-color: rgba(var(--accent-color), .2)
+  background-color: rgba(var(--accent-color), .2) !important
 }
 
 [class*="SessionTileDetails-videoStreamInformation-"] {
-  background-color: rgba(var(--accent-color), .15)
+  background-color: rgba(var(--accent-color), .15) !important
 }
 
 [class*="SessionTileDetails-audioStreamInformation-"] {
-  background-color: rgba(var(--accent-color), .1)
+  background-color: rgba(var(--accent-color), .1) !important
 }
 
 [class*="SessionTileDetails-subtitlesStreamInformation-"] {
-  background-color: rgba(var(--accent-color), .05);
+  background-color: rgba(var(--accent-color), .05) !important;
 }
 
 [class*="TopUsersList-container-"][class*="ServerDashboardSectionContent-container-"]>div>div>div>div:nth-child(3) {
@@ -375,12 +401,12 @@ button:hover [class*="DisclosureArrow-disclosureArrow-"] {
 }
 
 [class*="TopUsersCell-playHistoryLink-"] {
-  background-color: rgb(var(--accent-color));
-  color: #fff;
+  background-color: rgb(var(--accent-color)) !important;
+  color: #fff !important;
 }
 
 [class*="TopPlayedColumnHeader-emptyTitleBackground-"] {
-  background-color: rgba(var(--accent-color), .3);
+  background-color: rgba(var(--accent-color), .3) !important;
 }
 
 [class*="SelectedMenuItem-isSelected-"],
@@ -496,13 +522,13 @@ circle {
 
 .modal-body-with-panes .modal-nav-pane {
   background-image: none;
-  background: rgba(0, 0, 0, .25);
+  background: var(--transparency-dark-25)
 }
 
 .well,
 .files ul li {
   color: var(--text);
-  background-color: rgb(255 255 255 / 10%);
+  background: var(--transparency-dark-10);
   border: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
   box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
@@ -510,7 +536,7 @@ circle {
 
 .edit-section-modal .wizard-blocks-group>.wizard-block.selectable:hover {
   color: var(--text-hover);
-  background-color: rgba(255, 255, 255, .05);
+  background: var(--transparency-light-05);
 }
 
 .edit-section-modal .wizard-blocks-group>.wizard-block.selectable {
@@ -527,6 +553,7 @@ circle {
 }
 
 /* BUTTONS */
+
 .btn-primary {
   border-color: var(--button-color);
   color: var(--button-text);
@@ -539,6 +566,13 @@ circle {
 .btn-primary:hover {
   color: var(--button-text-hover);
   background-color: var(--button-color-hover);
+}
+
+.selectize-control.plugin-remove_button [data-value] .remove {
+  color: var(--button-text);
+}
+.selectize-control.plugin-remove_button [data-value] .remove:hover {
+  color: var(--button-text-hover);
 }
 
 [class*="Button-primary"].isDisabled {
@@ -579,7 +613,7 @@ fieldset[disabled] .btn-primary:hover {
 
 .edit-lock-addon {
   color: var(--button-color-hover);
-  background-color: rgba(0, 0, 0, .5);
+  background: var(--transparency-dark-50);
   border-color: transparent;
   -webkit-box-shadow: 0 0 2px rgb(0 0 0 / 30%), inset -2px 2px 2px rgb(0 0 0 / 10%);
   box-shadow: 0 0 2px rgb(0 0 0 / 30%), inset -2px 2px 2px rgb(0 0 0 / 10%);
@@ -680,11 +714,11 @@ hr {
 
 [class*="DirectoryListTableHeader-tableHeaderCell-"],
 [class*="DirectoryListTableHeader-columnMenuButton-"] {
-  background-color: rgb(0 0 0 / 25%);
+  background: var(--transparency-dark-25);
 }
 
 a>[class*="DirectoryListTableHeader-tableHeaderCell-"]:hover,
 button>[class*="DirectoryListTableHeader-tableHeaderCell-"]:hover,
 [class*="DirectoryListTableHeader-columnMenuButton-"]:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: var(--transparency-light-10);
 }

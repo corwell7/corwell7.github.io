@@ -1,4 +1,5 @@
-@import url("https://theme-park.dev/css/defaults/placeholders.css");
+@import url("/css/defaults/placeholders.css");
+@import url("/css/defaults/transparent.css");
 
 * {
     outline: none !important;
@@ -240,7 +241,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    background: rgba(0, 0, 0, 0.25) !important;
+    background: var(--transparency-dark-25) !important;
 }
 
 table th {
@@ -322,8 +323,8 @@ table td a {
 
 
 .dataTables_filter input {
-    background: none repeat scroll 0 0 rgb(255 255 255 / 10%);
-    border: 1px solid rgb(255 255 255 / 10%);
+    background: none repeat scroll 0 0 var(--transparency-light-10);
+    border: 1px solid var(--transparency-light-10);
     font-size: 15px;
     padding: 2px 4px;
     color: var(--text);
@@ -340,20 +341,20 @@ table.display thead th {
 }
 
 /* table.display tr.odd {
-	background-color: rgba(255, 255, 255, 0.15) !important;
+	background: var(--transparency-light-15) !important;
 }
 
 table.display tr.even {
-	background-color: rgba(255, 255, 255, 0.05) !important;
+	background: var(--transparency-light-05) !important;
 } */
 
 /* DataTables row classes */
 table.display tr.odd.gradeA {
-    background-color: rgba(255, 255, 255, 0.15);
+    background: var(--transparency-light-15);
 }
 
 table.display tr.even.gradeA {
-    background-color: rgba(255, 255, 255, 0.05);
+    background: var(--transparency-light-05);
 }
 
 table.display tr.odd.gradeB {
@@ -528,7 +529,7 @@ table.display_no_select tr.gradeZ td {
 
 table.display_no_select thead th {
     padding: 3px 18px 3px 10px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background: var(--transparency-dark-10);
     font-weight: bold;
     font-size: 16px;
 }
@@ -545,12 +546,12 @@ button {
 }
 
 select {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--transparency-light-15);
     color: var(--text);
 }
 
 select:focus {
-    background: #1f1f1f;
+    background: var(--drop-down-menu-bg);
     color: var(--text);
 }
 
@@ -567,7 +568,7 @@ input {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--transparency-light-15);
     border: none;
     color: var(--text);
     padding: 2px 4px;
@@ -628,7 +629,7 @@ input[type="radio"] {
 ::-moz-selection,
 ::selection {
     background: grey;
-    color: #fff;
+    var(--text-hover);
     text-shadow: none;
 }
 
@@ -723,12 +724,12 @@ form .row input[type=password] {
     max-width: 230px;
     margin-right: 5px;
     padding: 3px 5px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--transparency-light-10);
 }
 
 form .row input[type=text]:focus,
 form .row input[type=password]:focus {
-    background: rgba(255, 255, 255, 0.25);
+    background: var(--transparency-light-25);
 }
 
 form .row small {
@@ -821,7 +822,7 @@ ul#nav li a {
     color: rgb(var(--accent-color));
     display: block;
     padding: 7px 15px;
-    -text-shadow: 1px 1px 0px #FFF;
+    text-shadow: 1px 1px 0px var(--text);
     text-transform: capitalize;
     border: 1px solid transparent;
     font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
@@ -966,7 +967,7 @@ footer div {
     -moz-box-shadow: 0px 0px 2px #aaaaaa;
     -webkit-box-shadow: 0px 0px 2px #aaaaaa;
     -o-box-shadow: 0px 0px 2px #aaaaaa;
-    box-shadow: 0px 0px 2px #fff;
+    box-shadow: 0px 0px 2px var(--text);
     padding: 7px 10px;
     position: fixed;
     text-align: center;
@@ -1167,7 +1168,7 @@ div#searchbar input[type=text] {
     margin-right: 10px;
     padding: 4px 5px 4px 25px;
     width: 150px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--transparency-light-10);
 }
 
 div#searchbar .mini-icon {
@@ -1187,7 +1188,7 @@ div#searchbar .mini-icon {
 .checkbox.inline>input {
     margin-right: 5px;
     margin-left: 0;
-    color: #ffffff;
+    color: var(--text-hover);
 }
 
 .Skipped {
@@ -1234,7 +1235,7 @@ div#searchbar .mini-icon {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
-    -text-shadow: 1px 1px 0 #FFFFFF;
+    -text-shadow: 1px 1px 0 var(--text-hover);
 }
 
 .comictable tr td:last-child {
@@ -1250,7 +1251,7 @@ div#searchbar .mini-icon {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
-    -text-shadow: 1px 1px 0 #FFFFFF;
+    -text-shadow: 1px 1px 0 var(--text-hover);
 }
 
 .configtable tr td:last-child {
@@ -1318,8 +1319,8 @@ div#artistheader {
 }
 
 div#artistheader #artistImg {
-    background: #ffffff url("../../../images/loader_black.gif") center no-repeat;
-    border: 5px solid #FFF;
+    background: var(--text-hover) url("../../../images/loader_black.gif") center no-repeat;
+    border: 5px solid var(--text-hover);
     -moz-box-shadow: 1px 1px 2px 0 #555555;
     -webkit-box-shadow: 1px 1px 2px 0 #555555;
     -o-box-shadow: 1px 1px 2px 0 #555555;
@@ -2070,8 +2071,8 @@ div#artistheader h2 a {
 }
 
 #searchresults_table #artistImg {
-    background: url("../../../images/loader_black.gif") no-repeat scroll center center #ffffff;
-    border: 3px solid #FFFFFF;
+    background: url("../../../images/loader_black.gif") no-repeat scroll center center var(--text-hover);
+    border: 3px solid var(--text-hover);
     box-shadow: 1px 1px 2px 0 #555555;
     float: left;
     height: 50px;
@@ -2114,7 +2115,7 @@ div#artistheader h2 a {
 #searchresults_table td#score .bar .score {
     height: 14px;
     color: #343434;
-    color: #FFF;
+    color: var(--text-hover);
     font-size: 11px;
     vertical-align: middle;
     line-height: normal;
@@ -2875,7 +2876,7 @@ table tr td#status a {
     background: var(--modal-bg-color);
     padding: 5px;
     border: 2px solid rgba(221, 221, 221, 0);
-    color: white;
+    color: var(--text-hover);
     font-size: 1.2em;
     position: absolute;
     top: 20%;
@@ -3234,7 +3235,7 @@ div.alphabetInfo {
 
 /* JQUERY UI */
 .ui-tabs .ui-tabs-panel {
-    background: rgba(0, 0, 0, 0.15);
+    background: var(--transparency-dark-15);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -3249,7 +3250,7 @@ div.alphabetInfo {
 }
 
 .ui-tabs .ui-tabs-nav li {
-    background: rgba(255, 255, 255, 0.25);
+    background: var(--transparency-light-25);
     color: var(--text);
 }
 
@@ -3318,7 +3319,7 @@ body>div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable.ui-res
 }
 
 .wrap input {
-    background: rgba(0, 0, 0, 0.15);
+    background: var(--transparency-dark-15);
     border-radius: 7px !important;
     margin-bottom: 10px;
 }

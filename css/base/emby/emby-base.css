@@ -1,3 +1,6 @@
+@import url("/css/defaults/placeholders.css");
+@import url("/css/defaults/transparent.css");
+
 :root {
     --theme-primary-color: var(--accent-color);
     --theme-text-color: var(--text);
@@ -9,15 +12,15 @@
     --theme-background: var(--main-bg-color);
     --header-blur-background: rgba(20,20,20,0.66);
     --drawer-background: #2C2C2E;
-    --docked-drawer-background: rgba(0, 0, 0, 0.25);
+    --docked-drawer-background: var(--transparency-dark-25);
     --button-background: var(--button-color);
-    --card-background: rgba(0, 0, 0, 0.15);
+    --card-background: var(--transparency-dark-15);
     --footer-background: var(--modal-footer-color);
     --footer-blur-background: rgba(29,29,31,0.66);
     
     --header-background: var(--theme-background);
     --theme-body-secondary-text-color: rgba(255, 255, 255, .6);
-    --line-background: rgba(255, 255, 255, .08);
+    --line-background: var(--transparency-light-10);
     --line-size: .08em;
     --scrollbar-thumb-background: rgba(255,255,255,.3);
 }
@@ -27,9 +30,9 @@
         --theme-background: var(--main-bg-color);
         --header-blur-background: rgba(20,20,20,0.66);
         --drawer-background: #2C2C2E;
-        --docked-drawer-background: rgba(0, 0, 0, 0.25);
+        --docked-drawer-background: var(--transparency-dark-25);
         --button-background: #1f1f1f;
-        --card-background: rgba(0, 0, 0, 0.15);
+        --card-background: var(--transparency-dark-15);
         --footer-background: var(--modal-footer-color);
         --footer-blur-background: rgba(29,29,31,0.66);
     }
@@ -39,9 +42,9 @@
     --theme-background: var(--main-bg-color);
     --header-blur-background: rgba(20,20,20,0.66);
     --drawer-background: #2C2C2E;
-    --docked-drawer-background: rgba(0, 0, 0, 0.25);
+    --docked-drawer-background: var(--transparency-dark-25);
     --button-background: #1f1f1f;
-    --card-background: rgba(0, 0, 0, 0.15);
+    --card-background: var(--transparency-dark-15);
     --footer-background: var(--modal-footer-color);
     --footer-blur-background: rgba(29,29,31,0.66);
 }
@@ -157,7 +160,7 @@ html {
 }
 
 .pageTitleWithDefaultLogo {
-    background-image: url(https://theme-park.dev/resources/emby/logowhite.png)
+    background-image: url(/resources/emby/logowhite.png)
 }
 
 .backgroundContainer,
@@ -173,7 +176,7 @@ html {
 }
 
 .backgroundContainer.withBackdrop {
-    background-color: rgba(0, 0, 0, .83)
+    background: var(--transparency-dark-80)
 }
 
 @media not all and (min-width: 50em) {
@@ -215,7 +218,7 @@ html {
 
 .emby-select-withcolor {
     color: inherit;
-    background: rgba(0, 0, 0, 0.25);
+    background: var(--transparency-dark-25);
     border: var(--line-size) solid transparent
 }
 
@@ -232,12 +235,13 @@ html {
     .raised:not(.nobackdropfilter) {
         background: rgba(85, 85, 85, .3);
         -webkit-backdrop-filter: saturate(1.8) blur(1.5em);
-        backdrop-filter: saturate(1.8) blur(1.5em)
+        backdrop-filter: saturate(1.8) blur(1.5em);
+        color: var(--transparency-light-95);
     }
 
     .dialog-blur,
     .toast {
-        color: #fff;
+        color: var(--text-hover);
         background: rgba(56, 56, 56, .76);
         -webkit-backdrop-filter: blur(2.5em) saturate(1.8);
         backdrop-filter: blur(2.5em) saturate(1.8);
@@ -278,7 +282,7 @@ html {
 
 .emby-select-tv-withcolor:focus {
     background-color: rgb(var(--theme-primary-color)) !important;
-    color: #fff !important
+    color: var(--text-hover) !important
 }
 
 .checkboxLabel {
@@ -332,7 +336,7 @@ html {
 
 @media(hover: hover) and (pointer:fine) {
     .actionSheetMenuItem:hover {
-        background-color: rgba(255, 255, 255, .2)
+        background: var(--transparency-light-20)
     }
 }
 
@@ -361,7 +365,7 @@ html {
 
 .alphaPickerButton-tv:focus {
     background-color: rgb(var(--theme-primary-color));
-    color: #fff !important
+    color: var(--text-hover) !important
 }
 
 .detailTableBodyRow-shaded:nth-child(even) {
@@ -396,7 +400,7 @@ html {
 .emby-input,
 .emby-textarea {
     color: inherit;
-    background: rgb(0 0 0 / 25%);
+    background: var(--transparency-dark-25);
     border: var(--line-size) solid rgba(255, 255, 255, 0.1)
 }
 
@@ -459,7 +463,7 @@ html {
 .emby-button-focusscale:focus,
 .emby-button-focusscale:focus .detailButton-icon {
     background: rgb(var(--theme-primary-color));
-    color: #fff
+    color: var(--text-hover)
 }
 
 .emby-tab-button {
@@ -568,7 +572,7 @@ html {
 .channelCell:focus,
 .programCell:focus {
     background-color: rgb(var(--theme-primary-color));
-    color: #fff
+    color: var(--text-hover)
 }
 
 .guide-programTextIcon {
@@ -688,7 +692,7 @@ html {
 }
 
 .scrollbuttoncontainer {
-    color: #fff;
+    color: var(--text-hover);
     background: rgba(20, 20, 20, .5)
 }
 
@@ -697,7 +701,7 @@ html {
 }
 
 .drawerLogo {
-    background-image: url(https://theme-park.dev/resources/emby/logowhite.png);
+    background-image: url(/resources/emby/logowhite.png);
     border-bottom-color: var(--line-background)
 }
 
@@ -715,7 +719,7 @@ html {
 
 .dragging-over.full-drop-target {
     background: rgb(var(--theme-primary-color)) !important;
-    color: #fff !important
+    color: var(--text-hover) !important
 }
 
 .dragging-over-top:before {
