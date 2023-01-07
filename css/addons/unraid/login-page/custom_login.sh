@@ -1,7 +1,7 @@
 #!/bin/bash
 TYPE="retro-terminal"
-THEME="green.css"
-DOMAIN="theme-park.dev"
+THEME="custom.css"
+DOMAIN="corwell7.github.io"
 SCHEME="https"
 ADD_JS="true"
 JS="custom_text_header.js"
@@ -31,7 +31,7 @@ UNRAID_VERSION="$2"
 IFS=$' \t\n'
 LOGIN_PAGE="/usr/local/emhttp/login.php"
 # Changing file path to login.php if version >= 6.10
-if [[ "${UNRAID_VERSION}" =~ ^6.10.* ]]; then
+if [[ "${UNRAID_VERSION}" =~ ^6.11* ]]; then
 echo "Unraid version: ${UNRAID_VERSION}, changing path to login page"
 LOGIN_PAGE="/usr/local/emhttp/webGui/include/.login.php"
 fi
@@ -53,7 +53,7 @@ fi
 case ${DOMAIN} in
   *"github.io"*)
   echo "Switching to github.io URL style"
-    DOMAIN="${DOMAIN}\/theme.park"
+    DOMAIN="${DOMAIN}"
     ;;
 esac
 
